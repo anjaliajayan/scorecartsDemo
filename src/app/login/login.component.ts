@@ -42,7 +42,12 @@ export class LoginComponent implements OnInit {
         .subscribe((response: any) => {
           this.authService.setUserInfo({ 'user': response['user'] });
           this.router.navigate(['/dashBoard']);
+        },
+        (httpErrorResponse) => {
+          console.log(httpErrorResponse);
+          
         })
+     
     }
 
   }
