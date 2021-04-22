@@ -23,6 +23,7 @@ export class AuthService {
   }
 
   public validate(username, password) {
-    return this.http.post(`${this.url}/api/login`, {'userName' :username, 'passWord' : password});
+    return this.http.post(`${this.url}/api/login`,
+     {'userName' :username, 'passWord' : password},{withCredentials:true});
   }
 }

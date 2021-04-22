@@ -22,6 +22,7 @@ export class DashBoardComponent implements OnInit {
     this.logoutSubscription=this.loginService.logout()
     .subscribe((response:any) => {  
     localStorage.removeItem('user');  
+    localStorage.clear();
     this.router.navigateByUrl('/login')
     })
  
